@@ -17,7 +17,9 @@ import javafx.scene.text.Text;
 public class FXMLController {
 	private Dictionary model;
 
-	List <String> input = new ArrayList <>();  
+	List <String> input = new ArrayList <>(); 
+	private double start;
+	private double stop;
 
     @FXML
     private ResourceBundle resources;
@@ -51,7 +53,6 @@ public class FXMLController {
     	txtTesto.clear();
     	txtErrors.clear();
 
-    	
     }
 
     @FXML
@@ -65,17 +66,22 @@ public class FXMLController {
     	String [] s = testo.split(" ");
     	input = Arrays.asList(s);
     	
+    		
     	List <RichWord> errateStampa = new ArrayList <>();
+    	start = System.nanoTime();
     	try {
-    		errateStampa = this.model.spellCheckText(input);
+    		//errateStampa = this.model.spellCheckText(input);
+    		//errateStampa = this.model.spellCheckTextLinear(input);
+    		errateStampa = this.model.spellCheckTextDichotomic(input);
     	} catch (IllegalStateException se) {
     		txtErrors.appendText(se.getMessage());
     	}
-    	
+    	stop = System.nanoTime();
+
     	txtErrors.setText(this.model.stampaLista(errateStampa));
     	
     	txtNErrori.setText("Il testo contiene "+Integer.toString(this.model.getnErrate())+" errori.");
-    	txtTime.setText("Il tempo impiegato e' " +Long.toString(this.model.doTime()) + " nanosecondi.");
+    	txtTime.setText("Il tempo impiegato e' " + (stop - start)/1e9 + " secondi.");
     }
 
     @FXML

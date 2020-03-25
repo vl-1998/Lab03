@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.FXMLController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.spellchecker.FXMLController">
    <top>
       <Label text="Lab03_SpellChecker" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -37,12 +37,12 @@
             </HBox>
             <TextArea fx:id="txtTesto">
                <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </TextArea>
-            <Button fx:id="btnSpell" mnemonicParsing="false" onAction="#doSpellCheck" prefWidth="358.0" text="Spell Check">
+            <Button fx:id="btnSpell" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell Check">
                <VBox.margin>
-                  <Insets left="275.0" top="10.0" />
+                  <Insets left="375.0" top="10.0" />
                </VBox.margin>
             </Button>
             <Label text="Wrong Words">
@@ -52,19 +52,19 @@
             </Label>
             <TextArea fx:id="txtErrors">
                <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </TextArea>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Text fx:id="txtNErrori" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
                      <HBox.margin>
-                        <Insets left="40.0" top="15.0" />
+                        <Insets left="20.0" right="20.0" top="15.0" />
                      </HBox.margin>
                   </Text>
-                  <Button fx:id="btnClear" mnemonicParsing="false" onAction="#doClearText" prefWidth="358.0" text="Clear Text">
+                  <Button fx:id="btnClear" mnemonicParsing="false" onAction="#doClearText" text="Clear Text">
                      <HBox.margin>
-                        <Insets left="245.0" top="10.0" />
+                        <Insets left="345.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -75,7 +75,7 @@
    <bottom>
       <Text fx:id="txtTime" strokeType="OUTSIDE" strokeWidth="0.0" BorderPane.alignment="TOP_LEFT">
          <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" top="5.0" />
+            <Insets bottom="10.0" left="20.0" right="20.0" top="5.0" />
          </BorderPane.margin>
       </Text>
    </bottom>
